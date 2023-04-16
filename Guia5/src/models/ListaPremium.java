@@ -30,6 +30,7 @@ public class ListaPremium implements Reproduccion{
 
     @Override
     public String reproducir() {
+
         return null;
     }
 
@@ -39,15 +40,30 @@ public class ListaPremium implements Reproduccion{
     }
 
     @Override
-    public String eliminarCancion(Integer pos) {
-        String l = this.miLista.get(pos).toString();
+    public String eliminarCancion(int pos) {
+        String l = "Cancion eliminada: "+this.miLista.get(pos).getTitulo();
         this.miLista.remove(pos);
-
         return l;
     }
 
     @Override
     public String verMiLista() {
-        return null;
+        int i = 0;
+        String s = "";
+        if(!miLista.isEmpty()){
+            while(i < miLista.size()){
+                s += miLista.get(i).getTitulo()+"\n";
+                i++;
+            }
+        }
+        return s;
+    }
+
+    public String reproducirPremium(Integer pos){
+        String s = "";
+        if(!miLista.isEmpty()){
+            s = miLista.get(pos).toString();
+        }
+        return s;
     }
 }

@@ -18,13 +18,28 @@ public class Main {
         app.agregarCancion(cancion);
         app.agregarCancion(cancion1);
 
-        recorrerCanciones(app);
+        //recorrerCanciones(app);
 
-        app.getBase().agregarCancion(cancion);
-        app.getBase().agregarCancion(cancion1);
-        System.out.println(app.getBase().eliminarCancion(0));
-        System.out.println(app.getBase().verMiLista());
+        //app.getBase().agregarCancion(cancion);
+        //app.getBase().agregarCancion(cancion1);
+       // System.out.println(app.getBase().eliminarCancion(0));
+        //System.out.println(app.getBase().verMiLista());
 
+        app.getPremium().agregarCancion(cancion);
+        app.getPremium().agregarCancion(cancion1);
+       // System.out.println(app.getPremium().verMiLista());
+
+        /// Reporoduccion Premium
+        //System.out.println(app.getPremium().verMiLista());
+        //System.out.println(app.getPremium().reproducirPremium(0));
+
+        /// Eliminar Premium
+        //System.out.println(app.getPremium().verMiLista());
+        //System.out.println(app.getPremium().reproducirPremium(1));
+        //System.out.println(app.getPremium().eliminarCancion(1));
+        //System.out.println(app.getPremium().verMiLista());
+
+        menuApp(app);
     }
 
     public static Artista crearArtista(String nombre,Integer edad,String nacionalidad){
@@ -46,5 +61,53 @@ public class Main {
         for(Cancion c : app.getListaCanciones()){
             System.out.println(c.toString());
         }
+    }
+
+    public enum level {
+        BASICO,
+        PREMIUM
+
+    }
+
+    public static void menuApp(Spotify app){
+        int n;
+        String l = "";
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.println("Bienvenido a Spotify");
+        System.out.println("Seleccione su paquete:\n1-"+level.BASICO+"\n2-"+level.PREMIUM);
+        n = scan.nextInt();
+        if(n == 1){
+            int opcion;
+            System.out.println("PAQUETE BASICO");
+            System.out.println("1 - Agregar Cancion.\n2-Reproducir.\n3-Eliminar Cancion\n4-Ver Mi Lista");
+            opcion = scan.nextInt();
+            switch (opcion){
+                case 1:{
+                    System.out.println("Menu Agregar Cancion:");
+                    System.out.println("Listado de Canciones Disponible");
+                    recorrerCanciones(app);
+
+
+
+
+                }
+                break;
+                case 2:{
+                    app.getBase();
+                }
+            }
+
+        }else if(n == 2){
+
+        }else{
+            System.out.println("ERROR DE PAQUETE.....");
+        }
+
+
+
+
+
     }
 }

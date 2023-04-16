@@ -39,7 +39,7 @@ public class ListaBasica implements Reproduccion{
     }
 
     @Override
-    public String eliminarCancion(Integer pos) {
+    public String eliminarCancion(int pos) {
         return "Para acceder a estas opciones, compre el paquete PREMIUM.";
     }
 
