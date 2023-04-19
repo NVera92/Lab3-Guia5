@@ -18,16 +18,18 @@ public class Main {
         app.agregarCancion(cancion);
         app.agregarCancion(cancion1);
 
-        //recorrerCanciones(app);
+        recorrerCanciones(app);
 
-        //app.getBase().agregarCancion(cancion);
-        //app.getBase().agregarCancion(cancion1);
+        app.getBase().agregarCancion(cancion);
+        app.getBase().agregarCancion(cancion1);
        // System.out.println(app.getBase().eliminarCancion(0));
-        //System.out.println(app.getBase().verMiLista());
+        System.out.println(app.getBase().verMiLista());
+        System.out.println(app.getBase().reproducir());
+        System.out.println(app.getBase().verMiLista());
 
-        app.getPremium().agregarCancion(cancion);
-        app.getPremium().agregarCancion(cancion1);
-       // System.out.println(app.getPremium().verMiLista());
+        //app.getPremium().agregarCancion(cancion);
+        //app.getPremium().agregarCancion(cancion1);
+        //System.out.println(app.getPremium().verMiLista());
 
         /// Reporoduccion Premium
         //System.out.println(app.getPremium().verMiLista());
@@ -39,7 +41,6 @@ public class Main {
         //System.out.println(app.getPremium().eliminarCancion(1));
         //System.out.println(app.getPremium().verMiLista());
 
-        menuApp(app);
     }
 
     public static Artista crearArtista(String nombre,Integer edad,String nacionalidad){
@@ -110,4 +111,6 @@ public class Main {
 
 
     }
+
+
 }
